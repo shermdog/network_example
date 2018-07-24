@@ -2,9 +2,9 @@
   "name": "shermdog-network_example",
   "version": "0.1.0",
   "author": "Rick Sherman",
-  "summary": "",
+  "summary": "Collection of network device examples",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/shermdog/network_example",
   "dependencies": [
 
   ],
