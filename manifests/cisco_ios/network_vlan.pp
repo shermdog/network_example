@@ -5,6 +5,7 @@
 # @example
 #   include network_example::cisco_ios::network_vlan
 class network_example::cisco_ios::network_vlan (
+  Boolean $purge = false,
   Hash $vlans = {},
 ) {
 
@@ -14,6 +15,11 @@ class network_example::cisco_ios::network_vlan (
       shutdown  => $parameters[shutdown],
       vlan_name => $parameters[vlan_name],
     }
+  }
+
+  # Purge unmanaged instances if enabled
+  if $purge {
+    resources { 'network_vlan': purge => true }
   }
 
 }
