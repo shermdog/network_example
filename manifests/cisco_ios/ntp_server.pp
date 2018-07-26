@@ -5,6 +5,7 @@
 # @example
 #   include network_example::cisco_ios::ntp_server
 class network_example::cisco_ios::ntp_server (
+  Boolean $noop = false,
   Boolean $purge = false,
   Hash $servers = {},
 ) {
@@ -18,12 +19,16 @@ class network_example::cisco_ios::ntp_server (
       prefer           => $parameters[prefer],
       source_interface => $parameters[source_interface],
       vrf              => $parameters[vrf],
+      noop             => $noop,
     }
   }
 
   # Purge unmanaged instances if enabled
   if $purge {
-    resources { 'ntp_server': purge => true }
+    resources { 'ntp_server':
+      purge => true,
+      noop  => $noop,
+    }
   }
 
 }

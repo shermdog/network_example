@@ -27,7 +27,7 @@ class network_example::cisco_ios::tacacs_server (
 
   # Purge unmanaged instances if enabled
   if $purge {
-    resources { 'tacacs_server': 
+    resources { 'tacacs_server':
       purge => true,
       noop  => $noop,
     }
